@@ -1,2 +1,2 @@
 # SoftwareEngineering
-Repositorio público de la documentacion del proyecto denominado "Sistema de Registro y Mantenimiento de Propiedad Intelectual de Espol".
+Public Repository for the Documentation of the Project Titled 'Intellectual Property Registration and Maintenance System for Espol.
