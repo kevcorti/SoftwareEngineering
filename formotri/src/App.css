@@ -1,0 +1,105 @@
+/* App.css */
+
+/* General styles for the application */
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px; /* Add padding to the header */
+}
+
+/* Form styles */
+.App-form {
+  width: 100%;
+  max-width: 600px; /* Increase max width for better readability */
+  margin: 20px auto; /* Add margin for spacing between sections */
+  padding: 20px; /* Add padding inside the form for better spacing */
+  background-color: #fff; /* Optional: Add a background color to differentiate the form */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  color: #000; /* Change text color inside the form to black */
+}
+
+/* Form group styles */
+.form-group {
+  margin-bottom: 20px; /* Add margin bottom for spacing between form groups */
+}
+
+/* Input and textarea styles */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%; /* Make input and textarea take the full width */
+  padding: 10px; /* Add padding for better readability */
+  margin: 8px 0; /* Add margin for spacing between inputs */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 4px; /* Add rounded corners */
+}
+
+/* Textarea specific styles */
+textarea {
+  height: 150px; /* Increase height of textarea */
+  resize: vertical; /* Allow vertical resize only */
+}
+
+/* Button styles */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-group button {
+  margin: 7.5px 0;
+}
+
+.nav-steps {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.nav-button,
+.next-button,
+.back-button,
+.submit-button,
+.exit-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 7.5px 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.disabled-button {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.nav-button.active {
+  background-color: #0056b3;
+}
+.nav-space {
+  margin-right: 20px; /* Puedes ajustar este valor según el espacio deseado */
+}
+
+.small-text {
+  font-size: 0.5em; /* Puedes ajustar el tamaño de la fuente según lo necesites */
+  color: #999; /* Puedes ajustar el color según lo necesites */
+}
