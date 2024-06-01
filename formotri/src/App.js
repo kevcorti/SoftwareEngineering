@@ -7,12 +7,23 @@ function App() {
     name: '',
     email: '',
     projectName: '',
+    projectDirector: '',
+    projectCode: '',
     projectDescription: '',
     projectNeeds: '',
     fundingRequired: '',
     agreementAccepted: false,
     labLog: '',
-    projectRelation: '', // Añade esta línea para definir la propiedad projectRelation
+    projectRelation: '',
+    researchType: '',
+    otherRelation: '',
+    decanatoPlatform: '',
+    estado: '',
+    diffusion: '',
+    diffusionMedium: '',
+    diffusionDate: '',
+    diffusionContent: '',
+    diffusionImages: [],
   });
 
   const handleChange = (e) => {
@@ -23,6 +34,13 @@ function App() {
     });
   };
 
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    setFormData({
+      ...formData,
+      [name]: Array.from(files),
+    });
+  };
 
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
@@ -34,6 +52,11 @@ function App() {
 
   const handleExit = () => {
     setStep(1);
+  };
+
+  const handleSavePartial = () => {
+    console.log('Saved partially:', formData);
+    alert('Progreso guardado parcialmente.');
   };
 
   const handleSubmit = (e) => {
@@ -109,11 +132,10 @@ function App() {
               </button>
             </nav>
 
-
             <form onSubmit={handleSubmit} className="App-form">
               {step === 2 && (
                 <div className="form-group">
-                  <label htmlFor="name">Nombre del resultado del proyecto</label>
+                  <label htmlFor="name">Nombre del resultado del proyecto:</label>
                   <input
                     type="text"
                     id="name"
@@ -149,21 +171,21 @@ function App() {
                     <label htmlFor="projectName">Nombre del director del Proyecto</label>
                     <input
                       type="text"
-                      id="projectName"
-                      name="projectName"
-                      value={formData.projectName}
+                      id="projectDirector"
+                      name="projectDirector"
+                      value={formData.projectDirector}
                       onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="projectName">Código del proyecto </label>
+                    <label htmlFor="projectCode">Código del proyecto </label>
                     <span className="small-text">(En caso de no tener, escribir N/A)</span>
                     <input
                       type="text"
-                      id="projectName"
-                      name="projectName"
-                      value={formData.projectName}
+                      id="projectCode"
+                      name="projectCode"
+                      value={formData.projectCode}
                       onChange={handleChange}
                       required
                     />
@@ -197,11 +219,11 @@ function App() {
                       <option value="proyecto_investigacion_privada">Proyecto de investigación con financiación privada</option>
                       <option value="programa_vinculacion">Programa de vinculación</option>
                       <option value="programa_docencia">Programa de docencia</option>
-                      <option value="programa_docencia">Progyecto de docencia (titulación de grado)</option>
-                      <option value="programa_docencia">Proyecto de docencia (materias)</option>
-                      <option value="programa_docencia">Proyecto de docencia (titulación de postgrado)</option>
-                      <option value="programa_docencia">Proyecto de gestión educativa y administrativa</option>
-                      <option value="programa_docencia">Otro</option>
+                      <option value="programa_docencia_grado">Proyecto de docencia (titulación de grado)</option>
+                      <option value="programa_docencia_materias">Proyecto de docencia (materias)</option>
+                      <option value="programa_docencia_postgrado">Proyecto de docencia (titulación de postgrado)</option>
+                      <option value="programa_docencia_gestion">Proyecto de gestión educativa y administrativa</option>
+                      <option value="otro">Otro</option>
                     </select>
                   </div>
                   {formData.projectRelation.includes('investigacion') && (
@@ -223,20 +245,20 @@ function App() {
                     </div>
                   )}
                   <div className="form-group">
-                    <label htmlFor="projectName">En caso que la relación del resultado del proyecto sea otro, especifique.  </label>
+                    <label htmlFor="otherRelation">En caso que la relación del resultado del proyecto sea otro, especifique.  </label>
                     <span className="small-text">Caso contrario, indique que no aplica (escriba N/A)</span>
                     <input
                       type="text"
-                      id="projectName"
-                      name="projectName"
-                      value={formData.projectName}
+                      id="otherRelation"
+                      name="otherRelation"
+                      value={formData.otherRelation}
                       onChange={handleChange}
                       required
                     />
                   </div>
-                  {formData.projectRelation.includes('investigacion') && (
+                  {formData.projectRelation.includes('proyecto_investigacion') && (
                     <div className="form-group">
-                      <label htmlFor="decanatoPlatform">¿Está ingresado en la plataforma del Decanato de Investigación?</label>
+                      <label htmlFor="decanatoPlatform">Su proyecto está registrado en la plataforma de decanato de investigación?</label>
                       <p></p>
                       <select
                         id="decanatoPlatform"
@@ -269,39 +291,82 @@ function App() {
                 </>
               )}
               {step === 4 && (
-                <div className="form-group">
-                  <label htmlFor="projectDescription">Descripción del Proyecto:</label>
-                  <textarea
-                    id="projectDescription"
-                    name="projectDescription"
-                    value={formData.projectDescription}
-                    onChange={handleChange}
-                    required
-                  ></textarea>
-                </div>
-              )}
-              {step === 5 && (
                 <>
                   <div className="form-group">
-                    <label htmlFor="projectNeeds">Necesidades del Proyecto:</label>
-                    <textarea
-                      id="projectNeeds"
-                      name="projectNeeds"
-                      value={formData.projectNeeds}
+                    <label htmlFor="diffusion">¿Ha hecho algún tipo de difusión del resultado del proyecto?</label>
+                    <p></p>
+                    <select
+                      id="diffusion"
+                      name="diffusion"
+                      value={formData.diffusion}
                       onChange={handleChange}
                       required
-                    ></textarea>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="fundingRequired">Financiamiento Requerido:</label>
-                    <input
-                      type="text"
-                      id="fundingRequired"
-                      name="fundingRequired"
-                      value={formData.fundingRequired}
-                      onChange={handleChange}
-                      required
-                    />
+                    >
+                      <option value="">Seleccione una opción</option>
+                      <option value="Sí">Sí</option>
+                      <option value="No">No</option>
+                    </select>
+                    {formData.diffusion === 'Sí' && (
+                      <>
+                        <div className="form-group">
+                          <p></p>
+                          <label htmlFor="diffusionMedium">Medio de difusión:</label>
+                          <p></p>
+                          <input
+                            type="text"
+                            id="diffusionMedium"
+                            name="diffusionMedium"
+                            value={formData.diffusionMedium}
+                            onChange={handleChange}
+                            required
+                          />
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="diffusionDate">Fecha de difusión:</label>
+                          <p></p>
+                          <input
+                            type="date"
+                            id="diffusionDate"
+                            name="diffusionDate"
+                            value={formData.diffusionDate}
+                            onChange={handleChange}
+                            required
+                          />
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="diffusionContent">Contenido de la difusión:</label>
+                          <textarea
+                            id="diffusionContent"
+                            name="diffusionContent"
+                            value={formData.diffusionContent}
+                            onChange={handleChange}
+                            required
+                          ></textarea>
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="diffusionImages">Adjuntar imágenes o documentos:</label>
+                          <input
+                            type="file"
+                            id="diffusionImages"
+                            name="diffusionImages"
+                            multiple
+                            onChange={handleFileChange}
+                          />
+                        </div>
+                        {formData.diffusionImages.length > 0 && (
+                          <div className="image-preview">
+                            {formData.diffusionImages.map((file, index) => (
+                              <img
+                                key={index}
+                                src={URL.createObjectURL(file)}
+                                alt={`preview ${index}`}
+                                className="preview-image"
+                              />
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    )}
                   </div>
                 </>
               )}
@@ -321,6 +386,9 @@ function App() {
                     Guardar y Enviar
                   </button>
                 )}
+                <button type="button" onClick={handleSavePartial} className="save-partial-button">
+                  Guardar Parcial
+                </button>
               </div>
             </form>
           </>
