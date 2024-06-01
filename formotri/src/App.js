@@ -368,6 +368,75 @@ function App() {
                       </>
                     )}
                   </div>
+                  <div className="form-group">
+                    <label htmlFor="labLog">¿Alguno de los autores/inventores realizará difusión de este resultado en los próximos 3 meses?</label>
+                    <p></p>
+                    <select
+                      id="labLog"
+                      name="labLog"
+                      value={formData.labLog}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">Seleccione una opción</option>
+                      <option value="Sí">Sí</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="labLog">¿Ha iniciado ya el proceso de difusión?</label>
+                    <p></p>
+                    <select
+                      id="labLog"
+                      name="labLog"
+                      value={formData.labLog}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">Seleccione una opción</option>
+                      <option value="Sí">Sí</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <p></p>
+                    <label htmlFor="estado">Observaciones</label>
+                    <textarea
+                      id="estado"
+                      name="estado"
+                      value={formData.estado}
+                      onChange={handleChange}
+                      maxLength={100}
+                      placeholder="Ingrese las observaciones"
+                    ></textarea>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="labLog">¿Tiene conocimiento de que exista algún otro grupo (perteneciente o no a la ESPOL) que esté desarrollando líneas muy próximas a este resultado del proyecto?</label>
+                    <p></p>
+                    <select
+                      id="labLog"
+                      name="labLog"
+                      value={formData.labLog}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">Seleccione una opción</option>
+                      <option value="Sí">Sí</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <p></p>
+                    <label htmlFor="estado">Observaciones</label>
+                    <textarea
+                      id="estado"
+                      name="estado"
+                      value={formData.estado}
+                      onChange={handleChange}
+                      maxLength={100}
+                      placeholder="Ingrese las observaciones"
+                    ></textarea>
+                  </div>
                 </>
               )}
               <div className="button-group">
