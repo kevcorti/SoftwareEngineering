@@ -371,6 +371,9 @@ function App() {
               {step === 4 && (
                 <>
                   <div className="form-group">
+                  <div>
+                      <p style={{ color: 'blue' }}>Difusión del resultado del proyecto</p>
+                    </div>
                     <label htmlFor="diffusion">¿Ha hecho algún tipo de difusión del resultado del proyecto?</label>
                     <p></p>
                     <select
@@ -520,6 +523,9 @@ function App() {
               )}
               {step === 5 && (
                 <div className="form-group">
+                  <div>
+                      <p style={{ color: 'blue' }}>Recursos de fondos</p>
+                    </div>
                   <label htmlFor="fundingRequired">¿El resultado del proyecto tuvo financiamiento?</label>
                   <p></p>
                   <select
