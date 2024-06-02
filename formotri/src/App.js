@@ -64,6 +64,14 @@ function App() {
     console.log(formData);
     // Add form submission logic here
   };
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: checked,
+    });
+  };
+
 
   return (
     <div className="App">
@@ -107,28 +115,98 @@ function App() {
                 className={`nav-button ${step === 2 ? 'active' : ''}`}
                 onClick={() => setStep(2)}
               >
-                A
+                1
               </button>
               <span className="nav-space"></span>
               <button
                 className={`nav-button ${step === 3 ? 'active' : ''}`}
                 onClick={() => setStep(3)}
               >
-                B
+                2
               </button>
               <span className="nav-space"></span>
               <button
                 className={`nav-button ${step === 4 ? 'active' : ''}`}
                 onClick={() => setStep(4)}
               >
-                C
+                3
               </button>
               <span className="nav-space"></span>
               <button
                 className={`nav-button ${step === 5 ? 'active' : ''}`}
                 onClick={() => setStep(5)}
               >
-                D
+                4
+              </button>
+              <span className="nav-space"></span>
+              <button
+                className={`nav-button ${step === 6 ? 'active' : ''}`}
+                onClick={() => setStep(6)}
+              >
+                5
+              </button>
+              <span className="nav-space"></span>
+              <button
+                className={`nav-button ${step === 7 ? 'active' : ''}`}
+                onClick={() => setStep(7)}
+              >
+                6
+              </button>
+              <span className="nav-space"></span>
+              <button
+                className={`nav-button ${step === 8 ? 'active' : ''}`}
+                onClick={() => setStep(8)}
+              >
+                7
+              </button>
+              <span className="nav-space"></span>
+              <button
+                className={`nav-button ${step === 9 ? 'active' : ''}`}
+                onClick={() => setStep(9)}
+              >
+                8
+              </button>
+              <span className="nav-space"></span>
+              <button
+                className={`nav-button ${step === 10 ? 'active' : ''}`}
+                onClick={() => setStep(10)}
+              >
+                9
+              </button>
+              <span className="nav-space"></span>
+              <button
+                className={`nav-button ${step === 11 ? 'active' : ''}`}
+                onClick={() => setStep(11)}
+              >
+                10
+              </button>
+              <span className="nav-space"></span>
+              <button
+                className={`nav-button ${step === 12 ? 'active' : ''}`}
+                onClick={() => setStep(12)}
+              >
+                11
+              </button>
+              <span className="nav-space"></span>
+              <button
+                className={`nav-button ${step === 13 ? 'active' : ''}`}
+                onClick={() => setStep(13)}
+              >
+                12
+              </button>
+              <span className="nav-space"></span>
+              <button
+                className={`nav-button ${step === 14 ? 'active' : ''}`}
+                onClick={() => setStep(14)}
+              >
+                13
+              </button>
+              <span className="nav-space"></span>
+              <button
+                className={`nav-button ${step === 15 ? 'active' : ''}`}
+                onClick={() => setStep(15)}
+              >
+                14
               </button>
             </nav>
 
@@ -369,12 +447,12 @@ function App() {
                     )}
                   </div>
                   <div className="form-group">
-                    <label htmlFor="labLog">¿Alguno de los autores/inventores realizará difusión de este resultado en los próximos 3 meses?</label>
+                    <label htmlFor="labLogFuture">¿Alguno de los autores/inventores realizará difusión de este resultado en los próximos 3 meses?</label>
                     <p></p>
                     <select
-                      id="labLog"
-                      name="labLog"
-                      value={formData.labLog}
+                      id="labLogFuture"
+                      name="labLogFuture"
+                      value={formData.labLogFuture}
                       onChange={handleChange}
                       required
                     >
@@ -384,39 +462,12 @@ function App() {
                     </select>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="labLog">¿Ha iniciado ya el proceso de difusión?</label>
+                    <label htmlFor="labLogStarted">¿Ha iniciado ya el proceso de difusión?</label>
                     <p></p>
                     <select
-                      id="labLog"
-                      name="labLog"
-                      value={formData.labLog}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">Seleccione una opción</option>
-                      <option value="Sí">Sí</option>
-                      <option value="No">No</option>
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <p></p>
-                    <label htmlFor="estado">Observaciones</label>
-                    <textarea
-                      id="estado"
-                      name="estado"
-                      value={formData.estado}
-                      onChange={handleChange}
-                      maxLength={100}
-                      placeholder="Ingrese las observaciones"
-                    ></textarea>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="labLog">¿Tiene conocimiento de que exista algún otro grupo (perteneciente o no a la ESPOL) que esté desarrollando líneas muy próximas a este resultado del proyecto?</label>
-                    <p></p>
-                    <select
-                      id="labLog"
-                      name="labLog"
-                      value={formData.labLog}
+                      id="labLogStarted"
+                      name="labLogStarted"
+                      value={formData.labLogStarted}
                       onChange={handleChange}
                       required
                     >
@@ -437,7 +488,173 @@ function App() {
                       placeholder="Ingrese las observaciones"
                     ></textarea>
                   </div>
+                  <div className="form-group">
+                    <label htmlFor="labLog1">¿Tiene conocimiento de que exista algún otro grupo (perteneciente o no a la ESPOL) que esté desarrollando líneas muy próximas a este resultado del proyecto?</label>
+                    <p></p>
+                    <select
+                      id="labLog1"
+                      name="labLog1"
+                      value={formData.labLog1}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="id¿¿">Seleccione una opción</option>
+                      <option value="Sí">Sí</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <p></p>
+                    <label htmlFor="estado">Observaciones</label>
+                    <textarea
+                      id="estado"
+                      name="estado"
+                      value={formData.estado}
+                      onChange={handleChange}
+                      maxLength={100}
+                      placeholder="Ingrese las observaciones"
+                    ></textarea>
+                  </div>
+
                 </>
+              )}
+              {step === 5 && (
+                <div className="form-group">
+                  <label htmlFor="fundingRequired">¿El resultado del proyecto tuvo financiamiento?</label>
+                  <p></p>
+                  <select
+                    id="fundingRequired"
+                    name="fundingRequired"
+                    value={formData.fundingRequired}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">Seleccione una opción</option>
+                    <option value="Sí">Sí</option>
+                    <option value="No">No</option>
+                  </select>
+                  {formData.fundingRequired === 'Sí' && (
+                    <div>
+                      <label>Marque con una X el tipo de financiamiento:</label>
+                      <p></p>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="fundingTypePublic"
+                          checked={formData.fundingTypePublic}
+                          onChange={handleCheckboxChange}
+                        />
+                        Público
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="fundingTypePrivate"
+                          checked={formData.fundingTypePrivate}
+                          onChange={handleCheckboxChange}
+                        />
+                        Privado
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="fundingTypeOthers"
+                          checked={formData.fundingTypeOthers}
+                          onChange={handleCheckboxChange}
+                        />
+                        Otros
+                      </label>
+
+                      <div className="form-group">
+                        <label htmlFor="fundingAdmin">Por quién fueron administrados los fondos?</label>
+                        <input
+                          type="text"
+                          id="fundingAdmin"
+                          name="fundingAdmin"
+                          value={formData.fundingAdmin}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="subventionReference">Referencia/número de la subvención</label>
+                        <input
+                          type="text"
+                          id="subventionReference"
+                          name="subventionReference"
+                          value={formData.subventionReference}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="subventionTitle">Título de la subvención</label>
+                        <input
+                          type="text"
+                          id="subventionTitle"
+                          name="subventionTitle"
+                          value={formData.subventionTitle}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="sponsor">Patrocinador</label>
+                        <input
+                          type="text"
+                          id="sponsor"
+                          name="sponsor"
+                          value={formData.sponsor}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="collaborators">Colaboradores</label>
+                        <input
+                          type="text"
+                          id="collaborators"
+                          name="collaborators"
+                          value={formData.collaborators}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="startDate">Fecha de inicio</label>
+                        <input
+                          type="date"
+                          id="startDate"
+                          name="startDate"
+                          value={formData.startDate}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="endDate">Fecha de finalización</label>
+                        <input
+                          type="date"
+                          id="endDate"
+                          name="endDate"
+                          value={formData.endDate}
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="obligations">Obligaciones con los patrocinadores</label>
+                        <textarea
+                          id="obligations"
+                          name="obligations"
+                          value={formData.obligations}
+                          onChange={handleChange}
+                          required
+                        ></textarea>
+                      </div>
+                    </div>
+                  )}
+                </div>
               )}
               <div className="button-group">
                 {step > 2 && (
@@ -445,12 +662,12 @@ function App() {
                     Atrás
                   </button>
                 )}
-                {step < 5 && (
+                {step < 15 && (
                   <button type="button" onClick={handleNext} className="next-button">
                     Siguiente
                   </button>
                 )}
-                {step === 5 && (
+                {step === 15 && (
                   <button type="submit" className="submit-button">
                     Guardar y Enviar
                   </button>
