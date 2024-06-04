@@ -20,7 +20,7 @@
 /* Form styles */
 .App-form {
   width: 100%;
-  max-width: 600px; /* Increase max width for better readability */
+  max-width: 700px; /* Increase max width for better readability */
   margin: 20px auto; /* Add margin for spacing between sections */
   padding: 20px; /* Add padding inside the form for better spacing */
   background-color: #fff; /* Optional: Add a background color to differentiate the form */
