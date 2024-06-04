@@ -3,7 +3,6 @@
 export default function OrigenResultados(props){
     const handleChange = (e) => {
         props.handleChange(e);
-        console.log(props.formData.name)
     }
 
     return(
