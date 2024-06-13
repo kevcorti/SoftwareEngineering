@@ -6,6 +6,7 @@ import OrigenResultados from './Form_Components/OrigenResultados';
 import DifusionResultados from './Form_Components/DifusionResultados';
 import RecursosFondos from './Form_Components/RecursosFondos';
 import RelacionAutores from './Form_Components/RelacionAutores';
+import FormSideNavBar from './Form_Components/FormSideNavBar';
 
 function App() {
   const [step, setStep] = useState(1);
@@ -148,9 +149,10 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="bg-[#282c34] min-h-15 items-center justify-center text-white font-bold text-lg">
         <h1>ESCUELA SUPERIOR POLITÉCNICA DEL LITORAL</h1>
         <h2>OTRI</h2>
+      </header>
 
         {step === 1 && (
           <div>
@@ -183,6 +185,7 @@ function App() {
 
         {step > 1 && (
           <>
+          <FormSideNavBar/>
           <FormNavBar step={step} setStep={setStep}/>
 
             <form onSubmit={handleSubmit} className="App-form">
@@ -226,7 +229,7 @@ function App() {
             </form>
           </>
         )}
-      </header>
+      
     </div>
   );
 }
