@@ -101,29 +101,7 @@ function App() {
     });
   };
 
-  const addAuthor = () => {       //pasar funcion a su componente
-    setFormData((prevData) => ({
-      ...prevData,
-      otherAuthors: [
-        ...prevData.otherAuthors,
-        {
-          name: '',
-          signature: '',
-          isStudent: '',
-          role: '',
-          unit: '',
-          id: '',
-          nationality: '',
-          email: '',
-          phone: '',
-          contributionType: '',
-          contributionPercentage: '',
-          ipAgreement: '',
-          ipAgreementFile: null
-        }
-      ]
-    }));
-  };
+
 
   const handleExternalAuthorChange = (e, index) => {
     const { name, value } = e.target;
@@ -143,28 +121,7 @@ function App() {
     });
   };
 
-  const addExternalAuthor = () => {  //pasar funcion a su componente
-    setFormData((prevData) => ({
-      ...prevData,
-      otherExternalAuthors: [
-        ...prevData.otherExternalAuthors,
-        {
-          name: '',
-          signature: '',
-          entity: '',
-          role: '',
-          id: '',
-          nationality: '',
-          email: '',
-          phone: '',
-          contributionType: '',
-          contributionPercentage: '',
-          ipAgreement: '',
-          ipAgreementFile: null
-        }
-      ]
-    }));
-  };
+
 
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
@@ -242,7 +199,7 @@ function App() {
                 <RecursosFondos formData={formData} handleChange={handleChange} handleCheckboxChange={handleCheckboxChange}/>
               )}
               {step === 6 && (
-                <RelacionAutores formData={formData} handleChange={handleChange} handleFileChange={handleFileChange} handleAuthorChange={handleAuthorChange} handleExternalAuthorChange={handleExternalAuthorChange} handleAuthorFileChange={handleAuthorFileChange} handleExternalAuthorFileChange={handleExternalAuthorFileChange} addAuthor={addAuthor} addExternalAuthor={addExternalAuthor}/>
+                <RelacionAutores formData={formData} handleChange={handleChange} handleFileChange={handleFileChange} handleAuthorChange={handleAuthorChange} handleExternalAuthorChange={handleExternalAuthorChange} handleAuthorFileChange={handleAuthorFileChange} handleExternalAuthorFileChange={handleExternalAuthorFileChange} setFormData={setFormData}/>
               )}
 
 

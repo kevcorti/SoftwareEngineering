@@ -22,6 +22,53 @@ export default function RelacionAutores(props){
     const handleExternalAuthorFileChange = (e) =>{
         props.handleExternalAuthorFileChange(e);
     }
+
+    const addExternalAuthor = () => {  //pasar funcion a su componente
+      props.setFormData((prevData) => ({
+        ...prevData,
+        otherExternalAuthors: [
+          ...prevData.otherExternalAuthors,
+          {
+            name: '',
+            signature: '',
+            entity: '',
+            role: '',
+            id: '',
+            nationality: '',
+            email: '',
+            phone: '',
+            contributionType: '',
+            contributionPercentage: '',
+            ipAgreement: '',
+            ipAgreementFile: null
+          }
+        ]
+      }));
+    };
+
+    const addAuthor = () => {       //pasar funcion a su componente
+      props.setFormData((prevData) => ({
+        ...prevData,
+        otherAuthors: [
+          ...prevData.otherAuthors,
+          {
+            name: '',
+            signature: '',
+            isStudent: '',
+            role: '',
+            unit: '',
+            id: '',
+            nationality: '',
+            email: '',
+            phone: '',
+            contributionType: '',
+            contributionPercentage: '',
+            ipAgreement: '',
+            ipAgreementFile: null
+          }
+        ]
+      }));
+    };
  
     return(
         <div className="form-group">
@@ -390,7 +437,7 @@ export default function RelacionAutores(props){
                 </div>
               </div>
             ))}
-            <button type="button" onClick={props.addAuthor()}>Añadir otro autor/inventor</button>
+            <button type="button" onClick={() => addAuthor()}>Añadir otro autor/inventor</button>
           </div>
         )}
         {props.formData.authorsFromESPOL === 'No' && (
@@ -681,7 +728,7 @@ export default function RelacionAutores(props){
                 </div>
               </div>
             ))}
-            <button type="button" onClick={props.addExternalAuthor()}>Añadir otro autor/inventor</button>
+            <button type="button" onClick={() => addExternalAuthor()}>Añadir otro autor/inventor</button>
           </div>
         )}
       </div>
