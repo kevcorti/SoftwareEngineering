@@ -185,8 +185,7 @@ function App() {
 
         {step > 1 && (
           <>
-          <FormSideNavBar/>
-          <FormNavBar step={step} setStep={setStep}/>
+          <FormSideNavBar step={step} setStep={setStep}/>
 
             <form onSubmit={handleSubmit} className="App-form">
               {step === 2 && (
