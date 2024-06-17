@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import FormNavBar from './Form_Components/FormNavBar';
 import NombreResultado from './Form_Components/NombreResultado';
 import OrigenResultados from './Form_Components/OrigenResultados';
 import DifusionResultados from './Form_Components/DifusionResultados';
