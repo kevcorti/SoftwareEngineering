@@ -1,4 +1,4 @@
-
+import { Input, Button, Select, Textarea } from '@headlessui/react'
 
 export default function OrigenResultados(props){
     const handleChange = (e) => {
@@ -12,7 +12,7 @@ export default function OrigenResultados(props){
             <p style={{ color: 'blue' }}>Origen del resultado del proyecto</p>
           </div>
           <label htmlFor="projectName">Nombre del Proyecto</label>
-          <input
+          <Input
             type="text"
             id="projectName"
             name="projectName"
@@ -23,7 +23,7 @@ export default function OrigenResultados(props){
         </div>
         <div className="form-group">
           <label htmlFor="projectName">Nombre del director del Proyecto</label>
-          <input
+          <Input
             type="text"
             id="projectDirector"
             name="projectDirector"
@@ -35,7 +35,7 @@ export default function OrigenResultados(props){
         <div className="form-group">
           <label htmlFor="projectCode">Código del proyecto </label>
           <span className="small-text">(En caso de no tener, escribir N/A)</span>
-          <input
+          <Input
             type="text"
             id="projectCode"
             name="projectCode"
@@ -47,7 +47,7 @@ export default function OrigenResultados(props){
         <div className="form-group">
           <label htmlFor="labLog">Cuenta con bitácora de laboratorio?</label>
           <p></p>
-          <select
+          <Select
             id="labLog"
             name="labLog"
             value={props.formData.labLog}
@@ -57,11 +57,11 @@ export default function OrigenResultados(props){
             <option value="">Seleccione una opción</option>
             <option value="Sí">Sí</option>
             <option value="No">No</option>
-          </select>
+          </Select>
         </div>
         <div className="form-group">
           <label htmlFor="projectRelation">Relación del resultado del proyecto:</label>
-          <select
+          <Select
             id="projectRelation"
             name="projectRelation"
             value={props.formData.projectRelation}
@@ -78,13 +78,13 @@ export default function OrigenResultados(props){
             <option value="programa_docencia_postgrado">Proyecto de docencia (titulación de postgrado)</option>
             <option value="programa_docencia_gestion">Proyecto de gestión educativa y administrativa</option>
             <option value="otro">Otro</option>
-          </select>
+          </Select>
         </div>
         {props.formData.projectRelation.includes('investigacion') && (
           <div className="form-group">
             <label htmlFor="researchType">Tipo de investigación:</label>
             <p></p>
-            <select
+            <Select
               id="researchType"
               name="researchType"
               value={props.formData.researchType}
@@ -95,13 +95,13 @@ export default function OrigenResultados(props){
               <option value="I+D_basica">I+D básica</option>
               <option value="I+D_aplicada">I+D aplicada</option>
               <option value="Desarrollo_experimental">Desarrollo experimental</option>
-            </select>
+            </Select>
           </div>
         )}
         <div className="form-group">
           <label htmlFor="otherRelation">En caso que la relación del resultado del proyecto sea otro, especifique.  </label>
           <span className="small-text">Caso contrario, indique que no aplica (escriba N/A)</span>
-          <input
+          <Input
             type="text"
             id="otherRelation"
             name="otherRelation"
@@ -114,7 +114,7 @@ export default function OrigenResultados(props){
           <div className="form-group">
             <label htmlFor="decanatoPlatform">Su proyecto está registrado en la plataforma de decanato de investigación?</label>
             <p></p>
-            <select
+            <Select
               id="decanatoPlatform"
               name="decanatoPlatform"
               value={props.formData.decanatoPlatform}
@@ -124,12 +124,12 @@ export default function OrigenResultados(props){
               <option value="">Seleccione una opción</option>
               <option value="Sí">Sí</option>
               <option value="No">No</option>
-            </select>
+            </Select>
             {props.formData.decanatoPlatform === 'Sí' && (
               <div className="form-group">
                 <p></p>
                 <label htmlFor="estado">Estado:</label>
-                <textarea
+                <Textarea
                   id="estado"
                   name="estado"
                   value={props.formData.estado}
@@ -137,7 +137,7 @@ export default function OrigenResultados(props){
                   maxLength={100}
                   placeholder="Ingrese el estado..."
                   required
-                ></textarea>
+                ></Textarea>
               </div>
             )}
           </div>
