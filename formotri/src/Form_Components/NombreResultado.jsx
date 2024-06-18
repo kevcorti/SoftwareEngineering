@@ -1,3 +1,4 @@
+import { Input, Button } from '@headlessui/react'
 
 export default function NombreResultado(props){
     const handleChange = (e) => {
@@ -11,7 +12,7 @@ export default function NombreResultado(props){
     return(
         <div className="form-group">
         <label htmlFor="name">Nombre del resultado del proyecto:</label>
-        <input
+        <Input
           type="text"
           id="name"
           name="name"
@@ -20,9 +21,9 @@ export default function NombreResultado(props){
           required
         />
         <div className="button-group">
-          <button type="button" onClick={handleExit} className="exit-button">
+          <Button type="button" onClick={handleExit} className="exit-button">
             Salir
-          </button>
+          </Button>
         </div>
       </div>
     );

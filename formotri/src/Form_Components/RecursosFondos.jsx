@@ -1,3 +1,5 @@
+import { Select, Input, Textarea} from "@headlessui/react";
+
 export default function(props){
     const handleChange = (e) => {
         props.handleChange(e);
@@ -13,7 +15,7 @@ export default function(props){
         </div>
         <label htmlFor="fundingRequired">¿El resultado del proyecto tuvo financiamiento?</label>
         <p></p>
-        <select
+        <Select
           id="fundingRequired"
           name="fundingRequired"
           value={props.formData.fundingRequired}
@@ -23,13 +25,13 @@ export default function(props){
           <option value="">Seleccione una opción</option>
           <option value="Sí">Sí</option>
           <option value="No">No</option>
-        </select>
+        </Select>
         {props.formData.fundingRequired === 'Sí' && (
           <div>
             <label>Marque con una X el tipo de financiamiento:</label>
             <p></p>
             <label>
-              <input
+              <Input
                 type="checkbox"
                 name="fundingTypePublic"
                 checked={props.formData.fundingTypePublic}
@@ -38,7 +40,7 @@ export default function(props){
               Público
             </label>
             <label>
-              <input
+              <Input
                 type="checkbox"
                 name="fundingTypePrivate"
                 checked={props.formData.fundingTypePrivate}
@@ -47,7 +49,7 @@ export default function(props){
               Privado
             </label>
             <label>
-              <input
+              <Input
                 type="checkbox"
                 name="fundingTypeOthers"
                 checked={props.formData.fundingTypeOthers}
@@ -58,7 +60,7 @@ export default function(props){
 
             <div className="form-group">
               <label htmlFor="fundingAdmin">Por quién fueron administrados los fondos?</label>
-              <input
+              <Input
                 type="text"
                 id="fundingAdmin"
                 name="fundingAdmin"
@@ -69,7 +71,7 @@ export default function(props){
             </div>
             <div className="form-group">
               <label htmlFor="subventionReference">Referencia/número de la subvención</label>
-              <input
+              <Input
                 type="text"
                 id="subventionReference"
                 name="subventionReference"
@@ -80,7 +82,7 @@ export default function(props){
             </div>
             <div className="form-group">
               <label htmlFor="subventionTitle">Título de la subvención</label>
-              <input
+              <Input
                 type="text"
                 id="subventionTitle"
                 name="subventionTitle"
@@ -91,7 +93,7 @@ export default function(props){
             </div>
             <div className="form-group">
               <label htmlFor="sponsor">Patrocinador</label>
-              <input
+              <Input
                 type="text"
                 id="sponsor"
                 name="sponsor"
@@ -102,7 +104,7 @@ export default function(props){
             </div>
             <div className="form-group">
               <label htmlFor="collaborators">Colaboradores</label>
-              <input
+              <Input
                 type="text"
                 id="collaborators"
                 name="collaborators"
@@ -113,7 +115,7 @@ export default function(props){
             </div>
             <div className="form-group">
               <label htmlFor="startDate">Fecha de inicio</label>
-              <input
+              <Input
                 type="date"
                 id="startDate"
                 name="startDate"
@@ -124,7 +126,7 @@ export default function(props){
             </div>
             <div className="form-group">
               <label htmlFor="endDate">Fecha de finalización</label>
-              <input
+              <Input
                 type="date"
                 id="endDate"
                 name="endDate"
@@ -135,13 +137,13 @@ export default function(props){
             </div>
             <div className="form-group">
               <label htmlFor="obligations">Obligaciones con los patrocinadores</label>
-              <textarea
+              <Textarea
                 id="obligations"
                 name="obligations"
                 value={props.formData.obligations}
                 onChange={handleChange}
                 required
-              ></textarea>
+              ></Textarea>
             </div>
           </div>
         )}

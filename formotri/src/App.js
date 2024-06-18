@@ -6,6 +6,7 @@ import DifusionResultados from './Form_Components/DifusionResultados';
 import RecursosFondos from './Form_Components/RecursosFondos';
 import RelacionAutores from './Form_Components/RelacionAutores';
 import FormSideNavBar from './Form_Components/FormSideNavBar';
+import TerminosCondicionesI from './Form_Components/TerminosCondicionesI';
 
 function App() {
   const [step, setStep] = useState(1);
@@ -148,45 +149,21 @@ function App() {
 
   return (
     <div className="App">
-      <header className="bg-[#282c34] min-h-15 items-center justify-center text-white font-bold text-lg">
-        <h1>ESCUELA SUPERIOR POLITÉCNICA DEL LITORAL</h1>
+      <header className="bg-[#243165] min-h-15 items-center justify-center text-white font-bold text-lg">
+        <h1>OFICINA DE TRANFERENCIA DE RESULTADOS DE INVESTIGACIÓN</h1>
         <h2>OTRI</h2>
       </header>
-
+  
         {step === 1 && (
-          <div>
-            <p>Este formulario tiene como objetivo suministrar a la Oficina de Transferencia de Resultados de Investigación (OTRI) de la ESPOL, la información necesaria para llevar a cabo la gestión de la protección de la Propiedad Intelectual como resultado de proyectos académicos, y proyectos de gestión educativa y administrativa</p>
-            <p></p>
-            <p>Este documento contiene datos sensibles y propietarios cuya divulgación no autorizada podría tener consecuencias adversas. Por lo tanto, se solicita a todos los receptores y manipuladores que toda la información contenida en este documento sea tratada con confidencialidad.</p>
-            <p></p>
-            <p>Por favor, una vez completado y firmado el documento por todos los autores e inventores, remita el mismo al correo: <a href="mailto:otri@espol.edu.ec">otri@espol.edu.ec</a></p>
-            <label>
-              <input
-                type="checkbox"
-                name="agreementAccepted"
-                checked={formData.agreementAccepted}
-                onChange={handleChange}
-              />
-              Acepto los términos y condiciones
-            </label>
-            <div className="button-group">
-              <button
-                type="button"
-                onClick={handleNext}
-                disabled={!formData.agreementAccepted}
-                className={`next-button ${formData.agreementAccepted ? '' : 'disabled-button'}`}
-              >
-                Empezar Formulario
-              </button>
-            </div>
-          </div>
+          <TerminosCondicionesI formData={formData} handleChange={handleChange} handleNext={handleNext}/>
         )}
 
         {step > 1 && (
           <>
+          <div className='flex flex-row'>
           <FormSideNavBar step={step} setStep={setStep}/>
 
-            <form onSubmit={handleSubmit} className="App-form">
+            <form onSubmit={handleSubmit} className="App-form relative right-52">
               {step === 2 && (
                 <NombreResultado formData={formData} handleChange={handleChange} handleExit={handleExit}/>
               )}
@@ -225,6 +202,7 @@ function App() {
                 </button>
               </div>
             </form>
+            </div>
           </>
         )}
       
