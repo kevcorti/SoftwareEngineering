@@ -6,10 +6,10 @@ export default function FormSideNavBar(props){
     }
     
     return(
-        <aside class="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[30%] xl:w-[25%] 2xl:w-[20%] overflow-y-scroll">
+        <aside class="ml-[-100%] z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[30%] xl:w-[25%] 2xl:w-[20%] overflow-y-scroll">
     <div className="text-justify">
         <div class="-mx-6 px-6 py-4 border-b">
-            <span className="text-gray-700 text-xl px-4 py-3 space-x-4" > Secciones </span>
+            <span className="text-gray-700 text-xl py-3" > Formulario de comunicación de resultados </span>
         </div>
         <ul class="space-y-2 tracking-wide mt-8">
         <li>

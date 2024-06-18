@@ -1,3 +1,4 @@
+import { Select, Input, Button } from "@headlessui/react";
 export default function RelacionAutores(props){
     const handleChange = (e) => {
         props.handleChange(e);
@@ -23,7 +24,7 @@ export default function RelacionAutores(props){
         props.handleExternalAuthorFileChange(e);
     }
 
-    const addExternalAuthor = () => {  //pasar funcion a su componente
+    const addExternalAuthor = () => {  
       props.setFormData((prevData) => ({
         ...prevData,
         otherExternalAuthors: [
@@ -77,7 +78,7 @@ export default function RelacionAutores(props){
         </div>
         <label htmlFor="authorsFromESPOL">¿Los autores/inventores son de ESPOL?</label>
         <p></p>
-        <select
+        <Select
           id="authorsFromESPOL"
           name="authorsFromESPOL"
           value={props.formData.authorsFromESPOL}
@@ -87,13 +88,13 @@ export default function RelacionAutores(props){
           <option value="">Seleccione una opción</option>
           <option value="Sí">Sí</option>
           <option value="No">No</option>
-        </select>
+        </Select>
         {props.formData.authorsFromESPOL === 'Sí' && ( //cambiar la variable para la comporbacion
           <div>
             <h3>Datos del autor/inventor de contacto:</h3>
             <div className="form-group">
               <label htmlFor="contactAuthorName">Nombre</label>
-              <input
+              <Input
                 type="text"
                 id="contactAuthorName"
                 name="contactAuthorName"
@@ -104,7 +105,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="contactAuthorSignature">Firma</label>
-              <input
+              <Input
                 type="text"
                 id="contactAuthorSignature"
                 name="contactAuthorSignature"
@@ -115,7 +116,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="contactAuthorRole">Cargo</label>
-              <select
+              <Select
                 id="contactAuthorRole"
                 name="contactAuthorRole"
                 value={props.formData.contactAuthorRole}
@@ -134,11 +135,11 @@ export default function RelacionAutores(props){
                 <option value="Estudiante">Profesor titular - Agregado 3 tiempo parcial</option>
                 <option value="Profesor">Profesor titular - Auxiliar 1 tiempo completo</option>
                 <option value="Estudiante">Profesor titular - Auxiliar 1 medio tiempo</option>
-              </select>
+              </Select>
             </div>
             <div className="form-group">
               <label htmlFor="contactAuthorUnit">Unidad/Centro ESPOL</label>
-              <select
+              <Select
                 id="contactAuthorUnit"
                 name="contactAuthorUnit"
                 value={props.formData.contactAuthorUnit}
@@ -157,11 +158,11 @@ export default function RelacionAutores(props){
                 <option value="Facultad de Ciencias">Escuela de Posgrado en Administración de Empresas, ESPAE</option>
                 <option value="Centro de Investigaciones">Centro de Investigaciones Biotecnológicas del Ecuador, CIBE</option>
                 <option value="Facultad de Ingeniería">Centro de Tecnologías de la Información, CTI</option>
-              </select>
+              </Select>
             </div>
             <div className="form-group">
               <label htmlFor="contactAuthorID">Cédula/Pasaporte</label>
-              <input
+              <Input
                 type="text"
                 id="contactAuthorID"
                 name="contactAuthorID"
@@ -172,7 +173,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="contactAuthorNationality">Nacionalidad</label>
-              <input
+              <Input
                 type="text"
                 id="contactAuthorNationality"
                 name="contactAuthorNationality"
@@ -183,7 +184,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="contactAuthorEmail">Correo Electrónico</label>
-              <input
+              <Input
                 type="email"
                 id="contactAuthorEmail"
                 name="contactAuthorEmail"
@@ -194,7 +195,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="contactAuthorPhone">Teléfono</label>
-              <input
+              <Input
                 type="text"
                 id="contactAuthorPhone"
                 name="contactAuthorPhone"
@@ -205,7 +206,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="contactAuthorContributionType">Tipo de contribución</label>
-              <input
+              <Input
                 type="text"
                 id="contactAuthorContributionType"
                 name="contactAuthorContributionType"
@@ -216,7 +217,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="contactAuthorContributionPercentage">% de contribución en el resultado del proyecto</label>
-              <input
+              <Input
                 type="number"
                 id="contactAuthorContributionPercentage"
                 name="contactAuthorContributionPercentage"
@@ -227,7 +228,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="contactAuthorIPAgreement">¿Tiene contrato o acuerdo de Propiedad intelectual y confidencialidad firmado?</label>
-              <select
+              <Select
                 id="contactAuthorIPAgreement"
                 name="contactAuthorIPAgreement"
                 value={props.formData.contactAuthorIPAgreement}
@@ -237,11 +238,11 @@ export default function RelacionAutores(props){
                 <option value="">Seleccione una opción</option>
                 <option value="Sí">Sí</option>
                 <option value="No">No</option>
-              </select>
+              </Select>
               {props.formData.contactAuthorIPAgreement === 'Sí' && (
                 <div className="form-group">
                   <label htmlFor="contactAuthorIPAgreementFile">Subir archivo PDF firmado</label>
-                  <input
+                  <Input
                     type="file"
                     id="contactAuthorIPAgreementFile"
                     name="contactAuthorIPAgreementFile"
@@ -259,7 +260,7 @@ export default function RelacionAutores(props){
                 <h4>Autor</h4>
                 <div className="form-group">
                   <label htmlFor={`authorName${index}`}>Nombre</label>
-                  <input
+                  <Input
                     type="text"
                     id={`authorName${index}`}
                     name={`authorName${index}`}
@@ -270,7 +271,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`authorSignature${index}`}>Firma</label>
-                  <input
+                  <Input
                     type="text"
                     id={`authorSignature${index}`}
                     name={`authorSignature${index}`}
@@ -282,7 +283,7 @@ export default function RelacionAutores(props){
                 <div className="form-group">
                   <label htmlFor={`authorIsStudent${index}`}>¿Es estudiante?</label>
                   <p></p>
-                  <select
+                  <Select
                     id={`authorIsStudent${index}`}
                     name={`authorIsStudent${index}`}
                     value={author.isStudent}
@@ -292,11 +293,11 @@ export default function RelacionAutores(props){
                     <option value="">Seleccione una opción</option>
                     <option value="Sí">Sí</option>
                     <option value="No">No</option>
-                  </select>
+                  </Select>
                   {author.isStudent === 'No' && (
                     <div className="form-group">
                       <label htmlFor={`authorRole${index}`}>Cargo</label>
-                      <select
+                      <Select
                         id={`authorRole${index}`}
                         name={`authorRole${index}`}
                         value={author.role}
@@ -315,13 +316,13 @@ export default function RelacionAutores(props){
                         <option value="Profesor titular - Agregado 3 tiempo parcial">Profesor titular - Agregado 3 tiempo parcial</option>
                         <option value="Profesor titular - Auxiliar 1 tiempo completo">Profesor titular - Auxiliar 1 tiempo completo</option>
                         <option value="Profesor titular - Auxiliar 1 medio tiempo">Profesor titular - Auxiliar 1 medio tiempo</option>
-                      </select>
+                      </Select>
                     </div>
                   )}
                 </div>
                 <div className="form-group">
                   <label htmlFor={`authorUnit${index}`}>Unidad/Centro ESPOL</label>
-                  <select
+                  <Select
                     id={`authorUnit${index}`}
                     name={`authorUnit${index}`}
                     value={author.unit}
@@ -340,11 +341,11 @@ export default function RelacionAutores(props){
                     <option value="Facultad de Ciencias">Escuela de Posgrado en Administración de Empresas, ESPAE</option>
                     <option value="Centro de Investigaciones">Centro de Investigaciones Biotecnológicas del Ecuador, CIBE</option>
                     <option value="Facultad de Ingeniería">Centro de Tecnologías de la Información, CTI</option>
-                  </select>
+                  </Select>
                 </div>
                 <div className="form-group">
                   <label htmlFor={`authorID${index}`}>Cédula/Pasaporte</label>
-                  <input
+                  <Input
                     type="text"
                     id={`authorID${index}`}
                     name={`authorID${index}`}
@@ -355,7 +356,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`authorNationality${index}`}>Nacionalidad</label>
-                  <input
+                  <Input
                     type="text"
                     id={`authorNationality${index}`}
                     name={`authorNationality${index}`}
@@ -366,7 +367,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`authorEmail${index}`}>Correo Electrónico</label>
-                  <input
+                  <Input
                     type="email"
                     id={`authorEmail${index}`}
                     name={`authorEmail${index}`}
@@ -377,7 +378,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`authorPhone${index}`}>Teléfono</label>
-                  <input
+                  <Input
                     type="text"
                     id={`authorPhone${index}`}
                     name={`authorPhone${index}`}
@@ -388,7 +389,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`authorContributionType${index}`}>Tipo de contribución</label>
-                  <input
+                  <Input
                     type="text"
                     id={`authorContributionType${index}`}
                     name={`authorContributionType${index}`}
@@ -399,7 +400,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`authorContributionPercentage${index}`}>% de contribución en el resultado del proyecto</label>
-                  <input
+                  <Input
                     type="number"
                     id={`authorContributionPercentage${index}`}
                     name={`authorContributionPercentage${index}`}
@@ -410,7 +411,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`authorIPAgreement${index}`}>¿Tiene contrato o acuerdo de Propiedad intelectual y confidencialidad firmado?</label>
-                  <select
+                  <Select
                     id={`authorIPAgreement${index}`}
                     name={`authorIPAgreement${index}`}
                     value={author.ipAgreement}
@@ -420,11 +421,11 @@ export default function RelacionAutores(props){
                     <option value="">Seleccione una opción</option>
                     <option value="Sí">Sí</option>
                     <option value="No">No</option>
-                  </select>
+                  </Select>
                   {author.ipAgreement === 'Sí' && (
                     <div className="form-group">
                       <label htmlFor={`authorIPAgreementFile${index}`}>Subir archivo PDF firmado</label>
-                      <input
+                      <Input
                         type="file"
                         id={`authorIPAgreementFile${index}`}
                         name={`authorIPAgreementFile${index}`}
@@ -437,7 +438,7 @@ export default function RelacionAutores(props){
                 </div>
               </div>
             ))}
-            <button type="button" onClick={() => addAuthor()}>Añadir otro autor/inventor</button>
+            <Button type="button" onClick={() => addAuthor()}>Añadir otro autor/inventor</Button>
           </div>
         )}
         {props.formData.authorsFromESPOL === 'No' && (
@@ -445,7 +446,7 @@ export default function RelacionAutores(props){
             <h3>Datos del primer autor/inventor:</h3>
             <div className="form-group">
               <label htmlFor="firstAuthorName">Nombre</label>
-              <input
+              <Input
                 type="text"
                 id="firstAuthorName"
                 name="firstAuthorName"
@@ -456,7 +457,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="firstAuthorSignature">Firma</label>
-              <input
+              <Input
                 type="text"
                 id="firstAuthorSignature"
                 name="firstAuthorSignature"
@@ -467,7 +468,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="firstAuthorEntity">Entidad/Empresa</label>
-              <input
+              <Input
                 type="text"
                 id="firstAuthorEntity"
                 name="firstAuthorEntity"
@@ -478,7 +479,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="firstAuthorRole">Cargo</label>
-              <input
+              <Input
                 type="text"
                 id="firstAuthorRole"
                 name="firstAuthorRole"
@@ -489,7 +490,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="firstAuthorID">Cédula/Pasaporte</label>
-              <input
+              <Input
                 type="text"
                 id="firstAuthorID"
                 name="firstAuthorID"
@@ -500,7 +501,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="firstAuthorNationality">Nacionalidad</label>
-              <input
+              <Input
                 type="text"
                 id="firstAuthorNationality"
                 name="firstAuthorNationality"
@@ -511,7 +512,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="firstAuthorEmail">Correo Electrónico</label>
-              <input
+              <Input
                 type="email"
                 id="firstAuthorEmail"
                 name="firstAuthorEmail"
@@ -522,7 +523,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="firstAuthorPhone">Teléfono</label>
-              <input
+              <Input
                 type="text"
                 id="firstAuthorPhone"
                 name="firstAuthorPhone"
@@ -533,7 +534,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="firstAuthorContributionType">Tipo de contribución</label>
-              <input
+              <Input
                 type="text"
                 id="firstAuthorContributionType"
                 name="firstAuthorContributionType"
@@ -544,7 +545,7 @@ export default function RelacionAutores(props){
             </div>
             <div className="form-group">
               <label htmlFor="firstAuthorContributionPercentage">% de contribución en el resultado del proyecto</label>
-              <input
+              <Input
                 type="number"
                 id="firstAuthorContributionPercentage"
                 name="firstAuthorContributionPercentage"
@@ -556,7 +557,7 @@ export default function RelacionAutores(props){
             <div className="form-group">
               <label htmlFor="firstAuthorIPAgreement">¿Tiene contrato o acuerdo de Propiedad intelectual y confidencialidad firmado?</label>
               <p></p>
-              <select
+              <Select
                 id="firstAuthorIPAgreement"
                 name="firstAuthorIPAgreement"
                 value={props.formData.firstAuthorIPAgreement}
@@ -566,12 +567,12 @@ export default function RelacionAutores(props){
                 <option value="">Seleccione una opción</option>
                 <option value="Sí">Sí</option>
                 <option value="No">No</option>
-              </select>
+              </Select>
               {props.formData.firstAuthorIPAgreement === 'Sí' && (
                 <div className="form-group">
                   <label htmlFor="firstAuthorIPAgreementFile">Subir archivo PDF firmado</label>
                   <p></p>
-                  <input
+                  <Input
                     type="file"
                     id="firstAuthorIPAgreementFile"
                     name="firstAuthorIPAgreementFile"
@@ -589,7 +590,7 @@ export default function RelacionAutores(props){
                   <h4>Autor</h4>
 
                   <label htmlFor={`externalAuthorName${index}`}>Nombre</label>
-                  <input
+                  <Input
                     type="text"
                     id={`externalAuthorName${index}`}
                     name={`externalAuthorName${index}`}
@@ -600,7 +601,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`externalAuthorSignature${index}`}>Firma</label>
-                  <input
+                  <Input
                     type="text"
                     id={`externalAuthorSignature${index}`}
                     name={`externalAuthorSignature${index}`}
@@ -611,7 +612,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`externalAuthorEntity${index}`}>Entidad/Empresa</label>
-                  <input
+                  <Input
                     type="text"
                     id={`externalAuthorEntity${index}`}
                     name={`externalAuthorEntity${index}`}
@@ -622,7 +623,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`externalAuthorRole${index}`}>Cargo</label>
-                  <input
+                  <Input
                     type="text"
                     id={`externalAuthorRole${index}`}
                     name={`externalAuthorRole${index}`}
@@ -633,7 +634,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`externalAuthorID${index}`}>Cédula/Pasaporte</label>
-                  <input
+                  <Input
                     type="text"
                     id={`externalAuthorID${index}`}
                     name={`externalAuthorID${index}`}
@@ -644,7 +645,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`externalAuthorNationality${index}`}>Nacionalidad</label>
-                  <input
+                  <Input
                     type="text"
                     id={`externalAuthorNationality${index}`}
                     name={`externalAuthorNationality${index}`}
@@ -655,7 +656,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`externalAuthorEmail${index}`}>Correo Electrónico</label>
-                  <input
+                  <Input
                     type="email"
                     id={`externalAuthorEmail${index}`}
                     name={`externalAuthorEmail${index}`}
@@ -666,7 +667,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`externalAuthorPhone${index}`}>Teléfono</label>
-                  <input
+                  <Input
                     type="text"
                     id={`externalAuthorPhone${index}`}
                     name={`externalAuthorPhone${index}`}
@@ -677,7 +678,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`externalAuthorContributionType${index}`}>Tipo de contribución</label>
-                  <input
+                  <Input
                     type="text"
                     id={`externalAuthorContributionType${index}`}
                     name={`externalAuthorContributionType${index}`}
@@ -688,7 +689,7 @@ export default function RelacionAutores(props){
                 </div>
                 <div className="form-group">
                   <label htmlFor={`externalAuthorContributionPercentage${index}`}>% de contribución en el resultado del proyecto</label>
-                  <input
+                  <Input
                     type="number"
                     id={`externalAuthorContributionPercentage${index}`}
                     name={`externalAuthorContributionPercentage${index}`}
@@ -700,7 +701,7 @@ export default function RelacionAutores(props){
                 <div className="form-group">
                   <label htmlFor={`externalAuthorIPAgreement${index}`}>¿Tiene contrato o acuerdo de Propiedad intelectual y confidencialidad firmado?</label>
                   <p></p>
-                  <select
+                  <Select
                     id={`externalAuthorIPAgreement${index}`}
                     name={`externalAuthorIPAgreement${index}`}
                     value={author.ipAgreement}
@@ -710,12 +711,12 @@ export default function RelacionAutores(props){
                     <option value="">Seleccione una opción</option>
                     <option value="Sí">Sí</option>
                     <option value="No">No</option>
-                  </select>
+                  </Select>
                   {author.ipAgreement === 'Sí' && (
                     <div className="form-group">
                       <label htmlFor={`externalAuthorIPAgreementFile${index}`}>Subir archivo PDF firmado</label>
                       <p></p>
-                      <input
+                      <Input
                         type="file"
                         id={`externalAuthorIPAgreementFile${index}`}
                         name={`externalAuthorIPAgreementFile${index}`}
@@ -728,7 +729,7 @@ export default function RelacionAutores(props){
                 </div>
               </div>
             ))}
-            <button type="button" onClick={() => addExternalAuthor()}>Añadir otro autor/inventor</button>
+            <Button type="button" onClick={() => addExternalAuthor()}>Añadir otro autor/inventor</Button>
           </div>
         )}
       </div>

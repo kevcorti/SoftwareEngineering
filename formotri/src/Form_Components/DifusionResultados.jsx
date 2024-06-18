@@ -1,4 +1,5 @@
 
+import { Input, Select, Textarea } from '@headlessui/react'
 
 export default function DifusionResultados(props){
     const handleChange = (e) => {
@@ -17,7 +18,7 @@ export default function DifusionResultados(props){
           </div>
           <label htmlFor="diffusion">¿Ha hecho algún tipo de difusión del resultado del proyecto?</label>
           <p></p>
-          <select
+          <Select
             id="diffusion"
             name="diffusion"
             value={props.formData.diffusion}
@@ -27,7 +28,7 @@ export default function DifusionResultados(props){
             <option value="">Seleccione una opción</option>
             <option value="Sí">Sí</option>
             <option value="No">No</option>
-          </select>
+          </Select>
           {props.formData.diffusion === 'Sí' && (
             <>
               <div className="form-group">
@@ -46,7 +47,7 @@ export default function DifusionResultados(props){
               <div className="form-group">
                 <label htmlFor="diffusionDate">Fecha de difusión:</label>
                 <p></p>
-                <input
+                <Input
                   type="date"
                   id="diffusionDate"
                   name="diffusionDate"
@@ -57,17 +58,17 @@ export default function DifusionResultados(props){
               </div>
               <div className="form-group">
                 <label htmlFor="diffusionContent">Contenido de la difusión:</label>
-                <textarea
+                <Textarea
                   id="diffusionContent"
                   name="diffusionContent"
                   value={props.formData.diffusionContent}
                   onChange={handleChange}
                   required
-                ></textarea>
+                ></Textarea>
               </div>
               <div className="form-group">
                 <label htmlFor="diffusionImages">Adjuntar imágenes o documentos:</label>
-                <input
+                <Input
                   type="file"
                   id="diffusionImages"
                   name="diffusionImages"
@@ -93,7 +94,7 @@ export default function DifusionResultados(props){
         <div className="form-group">
           <label htmlFor="labLogFuture">¿Alguno de los autores/inventores realizará difusión de este resultado en los próximos 3 meses?</label>
           <p></p>
-          <select
+          <Select
             id="labLogFuture"
             name="labLogFuture"
             value={props.formData.labLogFuture}
@@ -103,12 +104,12 @@ export default function DifusionResultados(props){
             <option value="">Seleccione una opción</option>
             <option value="Sí">Sí</option>
             <option value="No">No</option>
-          </select>
+          </Select>
         </div>
         <div className="form-group">
           <label htmlFor="labLogStarted">¿Ha iniciado ya el proceso de difusión?</label>
           <p></p>
-          <select
+          <Select
             id="labLogStarted"
             name="labLogStarted"
             value={props.formData.labLogStarted}
@@ -118,24 +119,24 @@ export default function DifusionResultados(props){
             <option value="">Seleccione una opción</option>
             <option value="Sí">Sí</option>
             <option value="No">No</option>
-          </select>
+          </Select>
         </div>
         <div className="form-group">
           <p></p>
           <label htmlFor="estado">Observaciones</label>
-          <textarea
+          <Textarea
             id="estado"
             name="estado"
             value={props.formData.estado}
             onChange={handleChange}
             maxLength={100}
             placeholder="Ingrese las observaciones"
-          ></textarea>
+          ></Textarea>
         </div>
         <div className="form-group">
           <label htmlFor="labLog1">¿Tiene conocimiento de que exista algún otro grupo (perteneciente o no a la ESPOL) que esté desarrollando líneas muy próximas a este resultado del proyecto?</label>
           <p></p>
-          <select
+          <Select
             id="labLog1"
             name="labLog1"
             value={props.formData.labLog1}
@@ -145,19 +146,19 @@ export default function DifusionResultados(props){
             <option value="id¿¿">Seleccione una opción</option>
             <option value="Sí">Sí</option>
             <option value="No">No</option>
-          </select>
+          </Select>
         </div>
         <div className="form-group">
           <p></p>
           <label htmlFor="estado">Observaciones</label>
-          <textarea
+          <Textarea
             id="estado"
             name="estado"
             value={props.formData.estado}
             onChange={handleChange}
             maxLength={100}
             placeholder="Ingrese las observaciones"
-          ></textarea>
+          ></Textarea>
         </div>
 
       </>
