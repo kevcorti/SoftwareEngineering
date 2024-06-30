@@ -7,6 +7,7 @@ import RecursosFondos from './Form_Components/RecursosFondos';
 import RelacionAutores from './Form_Components/RelacionAutores';
 import FormSideNavBar from './Form_Components/FormSideNavBar';
 import TerminosCondicionesI from './Form_Components/TerminosCondicionesI';
+import Materiales from './Form_Components/Materiales'; 
 
 function App() {
   const [step, setStep] = useState(1);
@@ -57,7 +58,15 @@ function App() {
     firstAuthorContributionPercentage: '',
     firstAuthorIPAgreement: '',
     firstAuthorIPAgreementFile: null,
-    otherExternalAuthors: []
+    otherExternalAuthors: [],
+    //Materiales Inicio
+    materiales: '',
+    firmaMateriales: '',
+    materialesFirmaImage: [],
+    detalleMaterialesContent: '',
+    materialComercial: '',
+    detalleComercial: '',
+    //Materiales Fin   
   });
 
   const handleChange = (e) => {
@@ -178,6 +187,9 @@ function App() {
               )}
               {step === 6 && (
                 <RelacionAutores formData={formData} handleChange={handleChange} handleFileChange={handleFileChange} handleAuthorChange={handleAuthorChange} handleExternalAuthorChange={handleExternalAuthorChange} handleAuthorFileChange={handleAuthorFileChange} handleExternalAuthorFileChange={handleExternalAuthorFileChange} setFormData={setFormData}/>
+              )}
+              {step === 9 && (
+                <Materiales formData={formData} handleChange={handleChange} handleFileChange={handleFileChange}/>
               )}
 
 

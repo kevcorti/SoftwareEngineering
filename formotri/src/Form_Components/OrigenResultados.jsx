@@ -1,4 +1,4 @@
-import { Input, Button, Select, Textarea } from '@headlessui/react'
+import { Input, Select, Textarea } from '@headlessui/react'
 
 export default function OrigenResultados(props){
     const handleChange = (e) => {

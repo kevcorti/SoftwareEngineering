@@ -1,6 +1,6 @@
 import { Select, Input, Textarea} from "@headlessui/react";
 
-export default function(props){
+export default function RecursosFondos(props){
     const handleChange = (e) => {
         props.handleChange(e);
     }
